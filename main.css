@@ -40,11 +40,11 @@ a:active{
 }
 
 a:link{
-     ..
+     color:rgb(238, 29, 168)
     
 }
 a:visited{
-    ..
+    color: blue
 }
 div.menu {
     border: 5px solid;
