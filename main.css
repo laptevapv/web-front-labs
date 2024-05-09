@@ -21,3 +21,40 @@ footer{
     right: 0;
     left: 0;
 }
+a{
+    color: rgb(105, 204, 105);
+    text-decoration: none;
+    transition: 1s 2s;
+    font-size: 20px;
+}
+
+a:hover{
+    color: rgb(59, 11, 11);
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+a:active{
+    color: black;
+    opacity: 0.3;
+}
+
+a:link{
+     ..
+    
+}
+a:visited{
+    ..
+}
+div.menu {
+    border: 5px solid;
+    border-radius: 20px;
+    width: 300px;
+    color: blueviolet;
+    margin: 0 auto;
+}
+
+div.menu:hover{
+    background-color: lightblue;
+    box-shadow: 0px 0px 30px;
+}
