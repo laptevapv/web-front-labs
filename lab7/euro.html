@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс евро</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/apple-touch-icon.png" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+<script>
+    function getEuroExchangeRate(){
+        const url = "https://www.cbr-xml-daily.ru/daily_json.js";
+        fetch(url)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(json){
+            console.log(json);
+            let table = document.getElementById('table-eur');
+            let tr = document.createElement('tr');
+            let td = document.createElement('td');
+            td.innerText = json.Date.split("T")[0];
+            tr.appendChild(td);
+            
+            let td2 = document.createElement('td');
+            td2.innerText = json.Valute.EUR.Value;
+            tr.appendChild(td2);
+            
+            table.appendChild(tr);
+
+            // Создание красивого сообщения
+            let messageContainer = document.createElement('div');
+            messageContainer.style.border = "1px solid";
+            messageContainer.style.padding = "10px";
+            messageContainer.style.marginTop = "10px";
+            messageContainer.style.color = "maroon";
+
+            let currentDate = new Date(json.Date);
+            let prevDate = new Date(currentDate);
+            prevDate.setDate(prevDate.getDate() - 1);
+
+            let message = `
+                <p>Дата запроса: ${currentDate.toLocaleDateString('ru-RU')}</p>
+                <p>Курс за прошлую дату: ${json.Valute.EUR.Previous}</p>
+                <p>Текущий курс: ${json.Valute.EUR.Value}</p>
+                <p>Разница: ${Math.abs(json.Valute.EUR.Value - json.Valute.EUR.Previous)}</p>
+                <p>${json.Valute.EUR.Value > json.Valute.EUR.Previous ? 'Курс поднялся' : 'Курс опустился'}</p>
+                <p><a href="https://www.cbr-xml-daily.ru/">Источник данных</a></p>
+            `;
+            messageContainer.innerHTML = message;
+            document.body.appendChild(messageContainer);
+        })
+        .catch(function(error){
+            console.error('Ошибка при получении курса: ', error);
+        });
+    }
+</script>
+
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 7
+    </header>
+    <main>
+        <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a>
+        <button onclick="getEuroExchangeRate()">Получить курс обмена евро</button>
+        <table border="1" id="table-eur"></table>
+    </main>
+    
+    <footer>
+        &copy; Лаптева Полина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
