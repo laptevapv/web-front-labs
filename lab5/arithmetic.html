@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="lab4/apple-touch-icon" type="image/x-icon">
+    <link rel="icon" href="lab4/favicon-32x32.png">
+    <link rel="icon" href="lab4/favicon-16x16.png">
+    <script>
+        function showSum(){
+        let a=5154
+        let b=7891
+        let result=a+b
+        alert("сумма " + a + " и " + b + " равна "  + result)
+        }
+    </script>
+
+
+
+    <style>
+        .message {
+            width: 250px; /* Ширина */
+            height: 50px; /* Высота */
+            background-color: lightblue; /* Цвет фона */
+            border: 2px solid darkblue; /* Рамка */
+            padding: 15px; /* Отступ внутри рамки */
+            box-sizing: border-box; /* Учитываем рамку в общей ширине/высоте */
+            display: inline-block;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px blue;
+            background-color: lightcoral;
+            cursor: pointer;
+        }
+        .message:hover{
+            background-color: blue;
+        }
+        div{
+            text-align: center;
+            position: relative;
+            top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        НГТУ 5 Лабораторная
+    </header>
+
+    <main>
+        <div>
+            <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+            <div class="message">Узнать, кто автор страницы</div>
+        </div>
+
+
+
+
+    </main>
+
+
+</body>
