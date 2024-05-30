@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Калькулятор</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/apple-touch-ico" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <style>
+        .game {
+            margin: 0 auto;
+            border: 1px solid blue;
+            border-radius: 5px;
+            width: 80%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .help {
+            margin-top: 20px;
+            border: 1px solid green;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        let number;
+        let count = 0;
+
+        function startGame() {
+            number = Math.floor(Math.random() * 100 + 1);
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+
+        function guess() {
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+
+            if (isNaN(userNumber) || userNumber < 1 || userNumber > 100) {
+                alert('Введите число от 1 до 100!');
+                return;
+            }
+
+            count++;
+            let message = document.getElementById('result');
+            if (userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            } else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            } else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+        }
+
+        function playAgain() {
+            let screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            count = 0;
+            document.getElementById('user-number').value = '';
+            document.getElementById('result').innerHTML = '';
+            startGame();
+        }
+
+        function toggleHelp() {
+            let helpBlock = document.getElementById('help-block');
+            let showButton = document.getElementById('show-help');
+            let hideButton = document.getElementById('hide-help');
+
+            if (helpBlock.classList.contains('hidden')) {
+                helpBlock.classList.remove('hidden');
+                showButton.style.display = 'none';
+                hideButton.style.display = 'inline-block';
+            } else {
+                helpBlock.classList.add('hidden');
+                showButton.style.display = 'inline-block';
+                hideButton.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+<header></header>
+<main>
+    <div class="game">
+        <button onclick="startGame()">Сыграть в игру</button>
+    </div>
+
+    <div class="game" style="display: none;">
+        <h1>Угадай число от 1 до 100. Угадайте число?</h1>
+        <input type="number" value="" min="1" max="100" id="user-number"><br>
+        <button onclick="guess()">Угадать</button>
+        <div id="result"></div>
+    </div>
+
+    <div class="game" style="display: none;">
+        <h1>Искренне вас поздравляю, вы выиграли!</h1>
+        <div>Задуманное число: <span id="number"></span></div>
+        <div>Количество попыток: <span id="try-count"></span></div>
+        <div><button onclick="playAgain()">Сыграть еще раз</button></div>
+    </div>
+
+    <!-- Блок для помощи с правилами игры -->
+    <div class="help">
+        <button id="show-help" onclick="toggleHelp()">Показать правила игры</button>
+        <button id="hide-help" class="hidden" onclick="toggleHelp()">Скрыть правила игры</button>
+        <div id="help-block" class="hidden">
+            <h2>Правила игры:</h2>
+            <ol>
+                <li>Выберите число от 1 до 100.</li>
+                <li>Попробуйте угадать задуманное компьютером число.</li>
+                <li>Если ваше число больше задуманного, вы получите подсказку.</li>
+                <li>Если ваше число меньше задуманного, также будет подсказка.</li>
+                <li>Попробуйте угадать число за минимальное количество попыток!</li>
+            </ol>
+        </div>
+    </div>
+</main>
+</body>
+</html>
