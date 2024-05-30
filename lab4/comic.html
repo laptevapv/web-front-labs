@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="favicon-16x16.png"> 
+
+
+<style>
+.container {
+position: relative;
+display: inline-block;
+}
+
+.cloud {
+position: absolute;
+padding: 15px 30px;
+border-radius: 30px;
+border: 1px solid #ccc;
+background-color: #fff;
+color: #333;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+opacity: 0;
+transition: opacity 0.3s ease;
+color: rgb(128, 0, 0);
+font-size: 19px;
+}
+
+.container:hover .cloud {
+opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<img src="Levi.jpg" alt="Background Image" style="width: 65%;">
+
+<div class="cloud" style="top: 370px; left: 350px;"></div>
+<div class="cloud" style="top:400px; left: 420px;"></div>
+<div class="cloud" style="top: 430px; left: 470px;"></div>
+<div class="cloud" style="top: 480px; left: 530px;"></div>
+<div class="cloud" style="top: 540px; left: 600px;"> Чай будешь?</div>
+</div>
+
+</body>
+</html>
