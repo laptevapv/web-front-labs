@@ -8,3 +8,149 @@
     <link rel="shortcut icon" href="../lab4/apple-touch-icon.png" type="image/x-icon">
     <link rel="icon" href="../lab4/favicon-32x32.png">
     <link rel="icon" href="../lab4/favicon-16x16.png">
+    <style>
+
+    
+                button {
+                            padding: 10px 20px;
+                            background-color: rgb(78, 15, 129);
+                            color: #fff;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: transform 0.3s ease;
+                        }
+                        button:active {
+                            transform: scale(0.95);
+                        }
+                        #weatherForecast {
+                            border: 1px solid #ddd;
+                            border-radius: 5px;
+                            width: 450px;
+                            padding: 20px;
+                            margin: 20px 0;
+                            background-color: #fff;
+                            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                            opacity: 0;
+                            transition: opacity 0.5s ease;
+                        }
+                    
+  </style>
+
+    <script>
+      
+      function getWeatherForecast() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const times = json.hourly.time;
+                    const temperatures = json.hourly.temperature_2m;
+
+                    const indexAt8am = times.findIndex(time => time.endsWith('T08:00'));
+                    const indexAt12pm = times.findIndex(time => time.endsWith('T12:00'));
+                    const indexAt8pm = times.findIndex(time => time.endsWith('T20:00'));
+
+                    const tempAt8am = temperatures[indexAt8am];
+                    const tempAt12pm = temperatures[indexAt12pm];
+                    const tempAt8pm = temperatures[indexAt8pm];
+
+                    const forecastElement = document.getElementById('weatherForecast');
+                    forecastElement.innerHTML = `
+                        <p>Температура в 8 утра: ${tempAt8am}°C</p>
+                        <p>Температура в 12 дня: ${tempAt12pm}°C</p>
+                        <p>Температура в 20 вечера: ${tempAt8pm}°C</p>
+                        <p><a href="https://api.open-meteo.com/">Источник данных</a></p>
+                    `;
+                    forecastElement.style.opacity = 1;
+                });
+        }
+    
+    </script>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шипилов Дмитрий Андреевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+       button {
+            padding: 10px 20px;
+            background-color: rgb(78, 15, 129);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        button:active {
+            transform: scale(0.95);
+        }
+        #weatherForecast {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 450px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+    <script>
+        function getWeatherForecast() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const times = json.hourly.time;
+                    const temperatures = json.hourly.temperature_2m;
+
+                    const indexAt8am = times.findIndex(time => time.endsWith('T08:00'));
+                    const indexAt12pm = times.findIndex(time => time.endsWith('T12:00'));
+                    const indexAt8pm = times.findIndex(time => time.endsWith('T20:00'));
+
+                    const tempAt8am = temperatures[indexAt8am];
+                    const tempAt12pm = temperatures[indexAt12pm];
+                    const tempAt8pm = temperatures[indexAt8pm];
+
+                    const forecastElement = document.getElementById('weatherForecast');
+                    forecastElement.innerHTML = `
+                        <p>Температура в 8 утра: ${tempAt8am}°C</p>
+                        <p>Температура в 12 дня: ${tempAt12pm}°C</p>
+                        <p>Температура в 20 вечера: ${tempAt8pm}°C</p>
+                        <p><a href="https://api.open-meteo.com/">Источник данных</a></p>
+                    `;
+                    forecastElement.style.opacity = 1;
+                });
+        }
+    </script>
+</head>
+<header>
+    НГТУ, ФБ, Лабораторная 6 
+    <hr>
+</header>
+
+<main> 
+    <button onclick="getWeatherForecast()">Получить прогноз погоды</button>
+    <div id="weatherForecast" style="opacity: 1;">
+        <p>Температура в 8 утра: 2.6°C</p>
+        <p>Температура в 12 дня: 7.6°C</p>
+        <p>Температура в 20 вечера: 9.5°C</p>
+        <p><a href="https://api.open-meteo.com/">Источник данных</a></p>
+    </div>
+
+</main>
+<body>
+
+
+<footer>
+    &copy;Лаптева Полина, ФБИ-24, 2 курс, 2024
+    <hr>
+</footer>
