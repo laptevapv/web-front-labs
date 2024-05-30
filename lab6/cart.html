@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Перебор  цветов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/apple-touch-ico" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0px 0px 5px blueviolet;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            box-shadow: 0px 0px 5px blueviolet
+        }
+        th {
+            background-color: burlywood;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 5px blueviolet
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБИ-24, Лабораторная 6
+    </header>
+    <main> 
+        <div>
+            <label for="balance">Мой баланс (руб):</label>
+            <input type="number" id="balance" name="balance" min="0" step="1">
+        </div>
+
+        <table id="cart">
+            <thead>
+                <tr>
+                    <th>Название товара</th>
+                    <th>Цена (руб)</th>
+                    <th>Количество</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Милка шоколад</td>
+                    <td>70</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Сок яблочный 1 литр</td>
+                    <td>100</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Пирожное картошка</td>
+                    <td>50</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Молоко</td>
+                    <td>70</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Батон</td>
+                    <td>40</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Слойка со сгущенкой</td>
+                    <td>35</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Сникерс</td>
+                    <td>80</td>
+                    <td><input type="number" class="quantity" value="0" min="0" step="1"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button onclick="calculateTotal()">OK</button>
+        <p id="result"></p>
+    </main>
+
+    <footer>
+        &copy;Лаптева Полина, ФБИ-24, 2 курс, 2024
+        <hr> 
+    </footer>
+
+    <script>
+        function calculateTotal() {
+            let balance = parseInt(document.getElementById('balance').value);
+            let cart = document.querySelectorAll('.quantity');
+            let total = 0;
+
+            for (let item of cart) {
+                total += parseInt(item.value) * parseInt(item.parentNode.previousElementSibling.textContent);
+            }
+
+            if (total > balance) {
+                document.getElementById('result').textContent = "Ошибка: общая сумма превышает имеющийся баланс.";
+            } else if (total === 0) {
+                document.getElementById('result').textContent = "Ошибка: выберите хотя бы один товар.";
+            } else {
+                document.getElementById('result').textContent = "Успешное оформление товара. Итоговая сумма: " + total + " руб.";
+            }
+        }
+    </script>
+</body>
+</html>
