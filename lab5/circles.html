@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Круги</title>
+  <link rel="stylesheet" href="../main.css">
+  <link rel="shortcut icon" href="../lab4/apple-touch-ico" type="image/x-icon">
+  <link rel="icon" href="../lab4/favicon-32x32.png">
+  <link rel="icon" href="../lab4/favicon-16x16.png">
+
+  <title>Круги</title>
+  
+  <style>
+    body {
+      background-color: aqua;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: red;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      margin: 10px;
+      position: absolute;
+      left: calc(10% + 80% * var(--rand-x));
+      top: calc(10% + 80% * var(--rand-y));
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+
+  <main>
+    <div class="circle" style="--rand-x: 0.1; --rand-y: 0.2;" >1</div>
+    <div class="circle" style="--rand-x: 0.5; --rand-y: 0.4;">2</div>
+    <div class="circle" style="--rand-x: 0.9; --rand-y: 0.6;">3</div>
+    <div class="circle" style="--rand-x: 0.3; --rand-y: 0.8;">4</div>
+    <div class="circle" style="--rand-x: 0.7; --rand-y: 0.1;">5</div>
+    <div class="circle" style="--rand-x: 0.2; --rand-y: 0.5;">6</div>
+    <div class="circle" style="--rand-x: 0.6; --rand-y: 0.9;">7</div>
+    <div class="circle" style="--rand-x: 0.4; --rand-y: 0.3;">8</div>
+    <div class="circle" style="--rand-x: 0.8; --rand-y: 0.7;">9</div>
+    <div class="circle" style="--rand-x: 0.1; --rand-y: 0.9;">10</div>
+  </main>
+
+  <footer></footer>
+
+  <script>
+    const circles = document.querySelectorAll('.circle');
+
+    circles.forEach(circle => {
+      circle.addEventListener('click', () => {
+        circle.style.opacity = 0;
+        circle.style.transform = 'scale(0)';
+        setTimeout(() => circle.style.display = 'none', 500);
+      });
+    });
+  </script>
+</body>
+</html>
