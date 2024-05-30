@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блоки</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/apple-touch-icon.png" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <style>
+        .new-block {
+            background-color: green;
+            height: 40px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        /* Style for the reset button */
+        #resetButton {
+            display: none; /* Initially hidden */
+            margin-top: 10px; /* Add space between the buttons */
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <label for="blockCount">Введите количество блоков:</label>
+        <input type="number" id="blockCount" min="1" value="1">
+        <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button id="resetButton" onclick="resetBlocks()">Сбросить блоки</button>
+    </main>
+
+    <footer>
+        &copy; Орлов Андрей, ФБИ-21, 2 курс, 2024
+    </footer>
+
+    <script>
+        function addNewBlocks() {
+            let main = document.querySelector('main');
+            let blockCountInput = document.getElementById('blockCount');
+            let blockCount = parseInt(blockCountInput.value);
+
+            for (let i = 0; i < blockCount; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.className = 'new-block';
+
+                // Calculate width based on block number
+                let width = 100 + i * 20; // Starting width: 100px, increase by 20px for each block
+                newBlock.style.width = `${width}px`;
+
+                let calculation = 2 * (i + 1) ** 2;
+                newBlock.innerHTML = `Блок № ${i + 1}: 2 * ${i + 1} <sup>2</sup> = ${calculation}`;
+                main.appendChild(newBlock);
+            }
+
+            document.getElementById('resetButton').style.display = 'inline-block'; // Show the reset button
+        }
+
+        function resetBlocks() {
+            let blocks = document.querySelectorAll('.new-block');
+            blocks.forEach(block => block.remove());
+            document.getElementById('resetButton').style.display = 'none'; // Hide the reset button
+        }
+    </script>
+</body>
