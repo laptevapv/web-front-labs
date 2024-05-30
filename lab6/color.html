@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Перебор  цветов</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/apple-touch-ico" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <style>
+        .block {
+            background-color: green;
+            color: rgb(187, 255, 0);
+            border: 4px rgb(217, 255, 0) solid;
+            border-radius: 5px;
+            width: 400px;
+            margin: 258px auto;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.2;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.5s;
+            user-select: none; 
+        }
+        div.block div {
+            margin: 25px 0;
+        }
+    </style>
+    <script>
+        function changeColor(div) {
+            if (div.style.backgroundColor == 'green') {
+                div.style.backgroundColor = 'red';
+                document.getElementById('color-name').innerHTML = 'красный';
+                div.style.color = 'blue';
+                div.style.border = '4px blue solid';
+            }
+            else if (div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color-name').innerHTML = 'жёлтый';
+                div.style.color = 'black';
+                div.style.border = '4px black solid';
+            }
+            else if (div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'blue';
+                document.getElementById('color-name').innerHTML = 'синий';
+                div.style.color = 'red';
+                div.style.border = '4px red solid';
+            }
+            else if (div.style.backgroundColor == 'blue') {
+                div.style.backgroundColor = 'black';
+                document.getElementById('color-name').innerHTML = 'чёрный';
+                div.style.color = 'orange';
+                div.style.border = '4px orange solid';
+            }
+            else if (div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'violet';
+                document.getElementById('color-name').innerHTML = 'фиолетовый';
+                div.style.color = 'yellow';
+                div.style.border = '4px yellow solid';
+            }
+            else {
+                div.style.backgroundColor = 'green';
+                document.getElementById('color-name').innerHTML = 'зелёный';
+                div.style.color = 'pink';
+                div.style.border = '4px pink solid';
+            }
+        }
+    </script>
+</head>
+
+<body>
+<header onclick="showAuthor()">
+НГТУ, ФБ, Лабораторная работа 6
+</header>
+
+<main>
+    <div class="block" ondblclick="changeColor(this)">
+        <div>Цвет: <span id="color-name">зелёный</span></div>
+        <div>Сделайте двойной щелчок,<br>чтобы сменить</div>
+    </div>
+</main>
+<footer>
+    &copy;Лаптева Полина, ФБИ-24, 2 курс, 2024
+    <hr>
+</footer>
+</body>
+</html>
