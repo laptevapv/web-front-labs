@@ -17,10 +17,42 @@
             padding: 5px;
         }
 
+        .custom-block {
+            background-color: blue;
+            height: 60px;
+            border: 2px solid red;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .opacity-block {
+            width: 100px;
+            height: 40px;
+            background-color: purple;
+            border: 2px solid black;
+            margin-bottom: 10px;
+            padding: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
         /* Style for the reset button */
         #resetButton {
-            display: none; /* Initially hidden */
-            margin-top: 10px; /* Add space between the buttons */
+            display: none;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -31,11 +63,20 @@
         <label for="blockCount">Введите количество блоков:</label>
         <input type="number" id="blockCount" min="1" value="1">
         <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button onclick="add20_50()">Добавить блоки 20-50</button>
+        <button onclick="addCircles()">10 =&gt; -80</button>
+        <button onclick="addOpacityBlocks()">Создать блоки с opacity</button>
+        
+        <!-- Добавлены поле ввода числа и кнопка "Цветные круги" -->
+        <input type="number" id="circleCount" min="1" value="1">
+        <button onclick="addColoredCircles()">Цветные круги</button>
+        
         <button id="resetButton" onclick="resetBlocks()">Сбросить блоки</button>
     </main>
-
+   
     <footer>
-        &copy; Орлов Андрей, ФБИ-21, 2 курс, 2024
+        &copy; Лаптева Полина, ФБИ-24, 2 курс, 2024
+        <hr>
     </footer>
 
     <script>
@@ -48,8 +89,7 @@
                 let newBlock = document.createElement('div');
                 newBlock.className = 'new-block';
 
-                // Calculate width based on block number
-                let width = 100 + i * 20; // Starting width: 100px, increase by 20px for each block
+                let width = 100 + i * 20; 
                 newBlock.style.width = `${width}px`;
 
                 let calculation = 2 * (i + 1) ** 2;
@@ -60,10 +100,72 @@
             document.getElementById('resetButton').style.display = 'inline-block'; // Show the reset button
         }
 
+        function add20_50() {
+            let main= document.querySelector('main')
+            for(let i =20; i<=50; i+=2.5) {
+                let newBlock = document.createElement('div')
+                newBlock.className = 'custom-block'; // Apply the custom class
+
+                newBlock.style.width = '40px'
+                newBlock.style.border = '1px solid'
+
+                newBlock.innerHTML = `${i}`
+                main.appendChild(newBlock);
+            }
+        }
+
+        function addCircles() {
+            let main= document.querySelector('main')
+            for(let i =10; i>=-80; i-=3) {
+                let circle = document.createElement('div')
+                circle.className = 'circle'; // Apply the circle class
+
+                circle.innerHTML = `${i}`
+                main.appendChild(circle);
+            }
+        }
+
+        function addOpacityBlocks() {
+            let main= document.querySelector('main')
+            for(let i = 1; i <= 10; i++) {
+                let opacityBlock = document.createElement('div')
+                opacityBlock.className = 'opacity-block'; // Apply the opacity-block class
+
+                opacityBlock.style.opacity = i / 10; // Set opacity from 0 to 1 gradually
+                opacityBlock.innerHTML = `${i}`;
+                main.appendChild(opacityBlock);
+            }
+        }
+
+        function addColoredCircles() {
+            let main = document.querySelector('main');
+            let circleCountInput = document.getElementById('circleCount');
+            let circleCount = parseInt(circleCountInput.value);
+
+            main.innerHTML = ''; // Clear previous content
+
+            for (let i = circleCount; i >= 1; i--) {
+                let circle = document.createElement('div');
+                circle.className = 'circle';
+
+                if (i % 2 === 1) {
+                    circle.style.backgroundColor = 'red';
+                } else {
+                    circle.style.backgroundColor = 'green';
+                }
+
+                circle.innerHTML = `${i}`;
+                main.appendChild(circle);
+            }
+
+            document.getElementById('resetButton').style.display = 'inline-block'; // Show the reset button
+        }
+
         function resetBlocks() {
-            let blocks = document.querySelectorAll('.new-block');
+            let blocks = document.querySelectorAll('.new-block, .custom-block, .circle, .opacity-block'); // Select all types of blocks
             blocks.forEach(block => block.remove());
             document.getElementById('resetButton').style.display = 'none'; // Hide the reset button
         }
     </script>
 </body>
+</html>
