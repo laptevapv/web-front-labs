@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Фильтр товарап</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/apple-touch-ico" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: left;
+            height: 50vh; /* Высота контейнера на всю высоту видимой области */
+        }
+
+        #wear {
+            max-width: 100%;
+            max-height: 70%;
+            width: auto;
+            height: auto;
+        }
+    </style>
+
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+
+            if (color === 'Красный') {
+                if (type === 'Футболка') {
+                    wear.src = 'rf.jpg';
+                } else if (type === 'Поло') {
+                    wear.src = 'rp.jpg';
+                } else if (type === 'Майка') {
+                    wear.src = 'rm.jpg';
+                }
+            } else if (color === 'Белый') {
+                if (type === 'Футболка') {
+                    wear.src = 'wf.jpg';
+                } else if (type === 'Поло') {
+                    wear.src = 'wp.jpg';
+                } else if (type === 'Майка') {
+                    wear.src = 'wm.jpg';
+                }
+            } else if (color === 'Черный') {
+                if (type === 'Футболка') {
+                    wear.src = 'bf.jpg';
+                } else if (type === 'Поло') {
+                    wear.src = 'bp.jpg';
+                } else if (type === 'Майка') {
+                    wear.src = 'bm.jpg';
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 6
+    </header>
+    <main class="container"> <!-- Добавлен класс "container" для выравнивания -->
+       <div>
+        Цвет одежды:
+        <select id="wear-color">
+            <option>Красный</option>
+            <option>Белый</option>
+            <option>Черный</option>
+        </select><br>
+
+        Тип одежды:
+        <select id="wear-type">
+            <option>Футболка</option>
+            <option>Поло</option>
+            <option>Майка</option>
+        </select><br>
+        <button onclick="filter()">ОК</button>
+
+        <img id="wear">
+       </div>
+    </main>
+
+    <footer>
+        &copy; Лаптева Полина ФБИ-24, 2 курс, 2024
+        <hr>
+    </footer>
+</body>
+</html>
