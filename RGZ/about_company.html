@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+<title>Фора-Банк</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+      }
+      .menu {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        height: 100%;
+        background-color: #000000;
+        padding: 20px;
+        width: 150px;
+    
+      }
+      .menu a {
+        display: block;
+        margin-bottom: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .menu a:hover {
+        text-decoration: underline;
+        text-decoration-color: rgb(243, 6, 113, 0.764);
+      }
+    
+      .logo__image {
+        width: 60px;
+        height: auto;
+        padding: 20px;
+        position: absolute;
+        font-size: 16px;
+      }
+     
+      
+    
+      #b1 {
+        margin-top: 20px;
+        margin-left: 20%;
+        position: absolute;
+        font-size: 14.4px;
+      }
+    
+    
+      #b2 {
+        margin-left: 20%;
+        position: absolute;
+        margin-top: 25px;
+        font-size: 14.4px;
+      }
+    
+      
+      #b3 {
+        margin-left: 40%;
+        position: absolute;
+        margin-top: 3px;
+        font-size: 14.4px;
+      }
+      
+    
+      #b4 {
+        margin-left: 40%;
+        position: absolute;
+        margin-top: 25px;
+        font-size: 14.4px;
+      }
+    
+      #b5 {
+        margin-left: 65%;
+        position: absolute;
+        margin-top: 15px;
+        font-size: 14.4px;
+      }
+      #b6 {
+        margin-left: 80%;
+        border-radius: 2px;
+        width: 120px;
+        height: 50px;
+        position: absolute;
+        background-color: #ff0000;
+        color: white;
+        cursor: pointer;
+      }
+    
+      .header__places #b1, .header__places #b2 {
+      text-decoration: underline;
+      text-decoration-color: #8c87872b; /* черный цвет подчеркивания по умолчанию */
+    }
+    
+    .header__places #b1:hover, .header__places #b2:hover {
+      text-decoration-color: rgba(243, 6, 113, 0.764) /* ярко-голубой цвет подчеркивания при наведении */
+    }
+    .header__places #b6:hover {
+      background-color: rgba(243, 6, 113, 0.764);
+    }
+    .header__places {
+      width: 100%;
+      background-color: #ff0000;
+      height: 75px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    #m1 {
+	margin-top: 1%;
+	font-size: 32px;
+	font-weight: bold;
+}
+#m2 {
+	font-size: 16px;
+}
+
+
+
+.body_text {
+  max-width: 1300px;
+  margin: 10px; /* Обеспечить начало ниже заголовка */
+  padding: 50px;
+  background-color: whitesmoke;
+  text-align: justify;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  position: sticky;
+}
+
+/* Стилизация временной шкалы */
+.timeline-container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.timeline {
+  position: sticky;
+  top: 100px;
+  width: 4px;
+  background-color: #ff0000;
+  margin-right: 40px;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-bottom: 50px;
+  position: relative;
+  left: -6px;
+}
+.events {
+  flex: 1;
+}
+
+.circle.active {
+  background-color: #ff0000;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+.container {
+  margin-bottom: 50px;
+}
+
+.date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.content {
+  max-width: 600px;
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 6px;
+  margin-left: 20px;
+  border: 1px solid #ccc;
+}
+
+/* Утилитарные классы */
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+    </style>
+    </head>
+  
+    
+<body>
+  
+
+  <div class="header__places">
+    <img class="logo__image" src="../logo.png">
+    <div id="b1">Москва</div><br>
+    <div id="b2">Подразделения и банкоматы</div>
+    <div id="b3">Информационная служба</div>
+    <div id="b4">8 (800) 100-9889 (бесплатно по России)</div>
+    <div id="b5">Интернет-банк:</div>
+    <button id="b6">Войти</button>
+  </div>
+
+
+  <nav class="menu">
+    <ul>
+      <li><a href="about_company.html">О компании</a></li>
+      <li><a href="novosti.html">Новости</a></li>
+      <li><a href="curs.html">Курс валют</a></li>
+      <li><a href="contact.html">Контакты</a></li>
+      <li><a href="video.html">Видео</a></li>
+      <li><a href="rgz.html">Главная</a></li>
+    </ul>
+  </nav>
+  <div class="body_text">
+    <div id="m1">История Фора-Банк </div>
+    <p id="m2">
+        Акционерный коммерческий банк "ФОРА-БАНК"  зарегистрирован Центральным банком РФ 27 мая 1992 года. Головной офис банка
+         располагался в Москве.<br>
+        Лицензия на осуществление деятельности по ведению реестра владельцев ценных бумаг выдана ФКЦБ России 24.12.2002 г.
+         без ограничения срока деятельности.<br>
+        30 лет назад банк стал первопроходцем в оформлении сделок с недвижимостью, сегодня это его специализация. 
+        За прошедшие годы он накопил огромный опыт и создал репутацию на рынке. Фора-Банк имеет возможность предоставить
+         клиенту все виды организации сделок с недвижимостью, от подачи документов до предоставления банковских сейфов. 
+        Электронная регистрация сделок с недвижимостью осуществляется на основе партнёрства с Росреестром. <br>
+
+          Усилиями коллектива профессионалов ФОРА-БАНК стал сегодня финансовым учреждением, которое высоко ценят клиенты и партнеры.<br>
+    
+    У Фора-Банка обширная сеть подразделений из 137 офисов в 17 регионах Российской Федерации. В прошлом году мы поднялись на 12 место 
+    среди российских банков по уровню развития филиальной сети в центральном федеральном округе. Банк оказывает широкий спектр
+     банковских услуг для физических и юридических лиц, от обслуживания счетов и
+     оформления вкладов, до кредитования представителей малого, среднего и крупного отечественного бизнеса.
+    </p>
+
+    <p id="m3">
+        Фора-Банк выбирают не только физические лица, но и бизнес. Мы предлагаем юридическим лицам 
+        услуги по расчетно-кассовому обслуживанию,
+         коммерческому кредитованию, торговому эквайрингу, зарплатным проектам и бизнес-картам.
+         Удобное мобильное приложение «ФОРА.БИЗНЕС» позволяет управлять расчетами компании из любой точки земного шара в любое время.
+          После обновления «ФОРА.БИЗНЕС» вошло в ТОП-20 рейтинга, основанном на оценках и отзывах клиентов.
+    </p>
+
+<div class="body_text">
+  <div class="timeline-container">
+    <div class="timeline">
+      <div class="circle" data-target="2022"></div>
+      <div class="circle" data-target="2021"></div>
+      <div class="circle" data-target="2020"></div>
+      <div class="circle" data-target="2019"></div>
+      <div class="circle" data-target="2016"></div>
+      <div class="circle" data-target="2014"></div>
+      <div class="circle" data-target="2012"></div>
+      <div class="circle" data-target="2011"></div>
+      <div class="circle" data-target="2010"></div>
+      <div class="circle" data-target="2009"></div>
+      <div class="circle" data-target="2008"></div>
+      <div class="circle" data-target="1194"></div>
+      <div class="circle" data-target="1192"></div>
+    </div>
+    <div class="events">
+      <div class="container" id="2022">
+        <div class="date">2022</div>
+        <div class="content">
+        <p>2022-й — год двойного юбилея Фора-Банка. 20-летие отметит Калужский филиал, и эта дата в истории финансового учреждения — значимое событие. </p> <br>
+        <p> Филиал Фора-Банка достаточно популярен среди корпоративных и частных клиентов, география присутствия подразделений,
+             входящих в состав Калужского филиала, регулярно расширяется, в том числе и в таких городах, как Балашиха, Одинцово, Коломна,
+              Подольск, Наро-Фоминск, Серпухов. В Калужский филиал входят и Тульские операционные офисы. 
+            За годы своей работы Филиал в г. Калуге стал одним из ключевых филиалов Банка и по числу клиентов, и по объемам бизнеса.</p>
+      </div>
+    </div>
+    <div class="container" id="2021">
+      <div class="date">2021</div>
+      <div class="content">
+        <p>Пятое место в рейтинге банков по финансовому результату 
+            от операций купли-продажи наличной иностранной валюты, по данным ЦБ РФ на 1 июля 2021 года
+
+            Второе место в специальном рейтинге лучших дебетовых продуктов заняли дебетовые карты «Все включено»
+             по версии Bankiros.ru по состоянию за май 2021 года.</p>
+      </div>
+    </div>
+    <div class="container" id="2020">
+      <div class="date">2020</div>
+      <div class="content">
+        <p>А«Эксперт РА» подтвердило рейтинг кредитоспособности банка на уровне ruВ. 
+            Прогноз по рейтингу изменён с позитивного на стабильный. Рейтинговая оценка действует с 2018 года.</p>
+      </div>
+    </div>
+    <div class="container" id="2019">
+      <div class="date">2019</div>
+      <div class="content">
+        <p>Фора-Банк вошел в список самых надежных банков России, составленный деловым изданием Forbes.
+
+            Банк впервые оказался в рейтинге журнала, который выходит
+             ежегодно с 2017 года. Фора-Банк занял 98 место с рейтингом ruB по версии «Эксперт РА» и общей суммой активов 51 917,6 млн руб.</p>
+      </div>
+    </div>
+    <div class="container" id="2016">
+      <div class="date">2016</div>
+      <div class="content">
+        <p>В апреле рейтинговой агентство «Эксперт РА» подтвердило рейтинг
+             Фора-Банка на уровне B++ (удовлетворительная степень кредитоспособности) и практически сразу отозвало рейтинг из-за 
+             отказа банка от поддержания его публичности.</p>
+      </div>
+    </div>
+    <div class="container" id="2014">
+      <div class="date">2014</div>
+      <div class="content">
+        <p>Банк был зарегистрирован в Налоговом 
+            управлении США в качестве структуры, выполняющей требования FATCA (закона о налогообложении иностранных счетов).</p>
+      </div>
+    </div>
+    <div class="container" id="2012">
+      <div class="date">2012</div>
+      <div class="content">
+        <p>Рейтинговое агентство «Эксперт РА» присвоило рейтинг кредитоспособности АКБ «ФОРА-БАНК» на уровне
+             А «Высокий уровень кредитоспособности», прогноз по рейтингу «стабильный». Стабильный прогноз означает,
+             что высока вероятность сохранения рейтинга на прежнем уровне в среднесрочной перспективе.</p>
+      </div>
+    </div>
+    <div class="container" id="2011">
+      <div class="date">2011</div>
+      <div class="content">
+        <p>По данным Банки.ру, на 1 сентября 2011 года нетто-активы банка  ФОРА — 22,64 млрд рублей (133-е место в России),
+             капитал (рассчитанный в соответствии с требованиями ЦБ РФ) —
+             2,31 млрд, кредитный портфель — 17,16 млрд, обязательства перед населением — 12,86 млрд.
+            Подробнее на сайте Banki.ru https://www.banki.ru/news/lenta/?id=3272494.</p>
+      </div>
+    </div>
+    <div class="container" id="2010">
+      <div class="date">2010</div>
+      <div class="content">
+        <p>Согласно информации ЦБ РФ, 23 марта 2010 года было зарегистрировано изменение в составе акционеров Фора-Банка. 
+            По данным с сайта последнего, 25,45% акций были 
+            перераспределены в пользу новых акционеров — ООО «Торговый дом «Алкотек» (11,74%), ООО «Билдинг Сервис» (9,49%),
+             ЗАО «Торговый дом «СПК» (7,88%) и Николая Миронова (2,93%).
+        </p>
+      </div>
+    </div>
+    <div class="container" id="2009">
+      <div class="date">2009</div>
+      <div class="content">
+        <p>В 2009 году банк увеличил Уставный капитал до 165 млн. рублей. 16 июня Земский отпраздновал свой 15-летний юбилей! Многие сотрудники банка со сцены СДТМ им. Толстого были отмечены почетными грамотами от Администрации и Думы г. о. Сызрань, и поощрены ценными подарками и нагрудными знаками «Лучший сотрудник». В день рождения банка также среди вкладчиков по вкладу «Земский Юбилейный» был разыгран автомобиль Ford Fusion.</p>
+      </div>
+    </div>
+    <div class="container" id="2008">
+      <div class="date">2008</div>
+      <div class="content">
+        <p>Банк был включен в систему банковских электронных срочных платежей (БЭСП) в качестве прямого участника. 24 октября 2008 года Земский банк заключил Генеральный кредитный договор с ЦБ РФ о предоставлении кредитов, обеспеченных активами.</p>
+      </div>
+    </div>
+    <div class="container" id="1194">
+      <div class="date">1994</div>
+      <div class="content">
+        <p>В 1994 году банк первым начал выдавать кредиты под залог квартир, стал родоначальником и популяризатором 
+            в стране той самой ипотеки. 
+            И это спустя всего два года после своего появления..</p>
+      </div>
+    </div>
+    <div class="container" id="1992">
+      <div class="date">1992</div>
+      <div class="content">
+        <p>27 мая 1992 года — официальная дата регистрации Фора-Банка. Россия не имеет ни опыта рыночной экономики, 
+            ни деятельности коммерческих структур, при этом к началу 1992 года 
+            в стране существовало порядка 1300 банков, в число которых входил и Фора-Банк. Как минимум тысячи из них сегодня нет.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+const events = document.querySelectorAll('.container');
+const circles = document.querySelectorAll('.circle');
+
+const changeCircleState = (target) => {
+circles.forEach((circle) => {
+  if (circle.getAttribute('data-target') === target) {
+    circle.classList.add('active');
+  } else {
+    circle.classList.remove('active');
+  }
+});
+};
+
+const isInViewport = (el) => {
+const rect = el.getBoundingClientRect();
+return (
+  rect.top >= 0 &&
+  rect.left >= 0 &&
+  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+);
+};
+
+const handleScroll = () => {
+events.forEach((event) => {
+  if (isInViewport(event)) {
+    changeCircleState(event.id);
+  }
+});
+};
+
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('resize', handleScroll);
+handleScroll(); // Initial check
+});
+
+</script>
+
+</head>
+
+
+
+<header>
+
+</header>
+</html>
+  
+  </main>
+
+</body>
+</html>

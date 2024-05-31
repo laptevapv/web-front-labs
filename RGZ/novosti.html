@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+<title>Фора-Банк</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+      }
+      .menu {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        height: 100%;
+        background-color: #000000;
+        padding: 20px;
+        width: 150px;
+    
+      }
+      .menu a {
+        display: block;
+        margin-bottom: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .menu a:hover {
+        text-decoration: underline;
+        text-decoration-color: rgb(243, 6, 113, 0.764);
+      }
+      
+      .logo__image {
+        width: 60px;
+        height: auto;
+        padding: 20px;
+        position: fixed;
+        font-size: 16px;
+      }
+
+    .news-section {
+    margin-top: 80px;
+    padding: 20px;
+  }
+
+  .news-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .news-card h3 {
+    margin: 0;
+  }
+
+  .news-card p {
+    margin: 10px 0;
+  }
+
+  .show-btn {
+    background-color: #321f6e;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .show-btn:hover {
+    background-color: cyan;
+  }
+  .header__places {
+  width: 100%;
+  background-color: #321f6e;
+  height: 75px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+      
+    
+      #b1 {
+        margin-top: 20px;
+        margin-left: 20%;
+        position: absolute;
+        font-size: 14.4px;
+      }
+    
+    
+      #b2 {
+        margin-left: 20%;
+        position: absolute;
+        margin-top: 25px;
+        font-size: 14.4px;
+      }
+    
+      
+      #b3 {
+        margin-left: 40%;
+        position: absolute;
+        margin-top: 3px;
+        font-size: 14.4px;
+      }
+      
+    
+      #b4 {
+        margin-left: 40%;
+        position: absolute;
+        margin-top: 25px;
+        font-size: 14.4px;
+      }
+    
+      #b5 {
+        margin-left: 65%;
+        position: absolute;
+        margin-top: 15px;
+        font-size: 14.4px;
+      }
+      #b6 {
+        margin-left: 80%;
+        border-radius: 2px;
+        width: 120px;
+        height: 50px;
+        position: absolute;
+        background-color: #ff0000;
+        color: white;
+        cursor: pointer;
+      }
+    
+      .header__places #b1, .header__places #b2 {
+      text-decoration: underline;
+      text-decoration-color: #8c87872b; /* черный цвет подчеркивания по умолчанию */
+    }
+    
+    .header__places #b1:hover, .header__places #b2:hover {
+      text-decoration-color: rgba(243, 6, 113, 0.764) /* ярко-голубой цвет подчеркивания при наведении */
+    }
+    .header__places #b6:hover {
+      background-color: rgba(243, 6, 113, 0.764);
+    }
+    .header__places {
+      width: 100%;
+      background-color: #ff0000;
+      height: 75px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+   
+    
+    </style>
+    </head>
+  
+    
+<body>
+  
+
+  <div class="header__places">
+    <img class="logo__image" src="../logo.png">
+    <div id="b1">Москва</div><br>
+    <div id="b2">Подразделения и банкоматы</div>
+    <div id="b3">Информационная служба</div>
+    <div id="b4">8 (800) 100-9889 (бесплатно по России)</div>
+    <div id="b5">Интернет-банк:</div>
+    <button id="b6">Войти</button>
+  </div>
+
+
+  <nav class="menu">
+    <ul>
+      <li><a href="about_company.html">О компании</a></li>
+      <li><a href="novosti.html">Новости</a></li>
+      <li><a href="curs.html">Курс валют</a></li>
+      <li><a href="contact.html">Контакты</a></li>
+      <li><a href="video.html">Видео</a></li>
+      <li><a href="rgz.html">Главная</a></li>
+    </ul>
+  </nav>
+  <div class="news-section">
+    <div class="news-card">
+      <h3>2024-05-31: Ярославские школьники стали лидерами творческого соревнования «Конкурс стикеров #ВместеСФорой»</h3>
+      <p>Сотрудники ярославского филиала Фора-Банка поблагодарили ярославских школьников         ...</p>
+      <button class="show-btn" onclick="alert('Полная новость: Сотрудники ярославского филиала Фора-Банка поблагодарили ярославских школьников за участие в конкурсе стикеров #ВместеСФорой. ')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-05-25: Не доверять, а проверять!</h3>
+      <p>Фора-Банк собрал школьников и ветеранов в Саранске ...</p>
+      <button class="show-btn" onclick="alert('Полная новость: Фора-Банк собрал школьников и ветеранов в Саранске на открытый урок по финансовой грамотности.')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-05-03: Получайте денежные переводы из Армении сразу на карту Фора-Банка</h3>
+      <p>Сервис переводов «МИГ» расширяет возможности...</p>
+      <button class="show-btn" onclick="alert('Полная новость: Сервис переводов «МИГ» расширяет возможности, запустив совместно с АМИО БАНКом переводы из Армении в Россию.')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-04-26: Пермские зрители получили возможность погрузились в атмосферу блистательного мира «Великого Гетсби» </h3>
+      <p>«Великий Гэтсби» в Перми поставлен школой танцев «Денс Лайф»  ...</p>
+      <button class="show-btn" onclick="alert('Полная новость: «Великий Гэтсби» в Перми поставлен школой танцев «Денс Лайф» при участии пермского филиала Фора-Банка')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-04-25: Партнерство с международным банком</h3>
+      <p>ФОРА Банк объявил о партнерстве с крупным международным банком...</p>
+      <button class="show-btn" onclick="alert('Полная новость: ФОРА- Банк объявил о партнерстве с крупным международным банком, что расширит возможности наших клиентов.')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-04-22: Калужские школьники провели открытый урок финансовой грамотности в старейшей школе города  </h3>
+      <p>Старейшая школа Калуги стала площадкой проведения открытого урока ...</p>
+      <button class="show-btn" onclick="alert('Полная новость: Старейшая школа Калуги стала площадкой проведения открытого урока акции «Финансовая безопасность в цифровом мире.      .')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-04-20 :Фора-Банк выступил партнером ежегодного конкурса «Экспортер года» в Ярославской области.
+    </h3>
+      <p> Фора-Банк выступил партнером ежегодного конкурса «Экспортер года» ...      .</p>
+      <button class="show-btn" onclick="alert('Полная новость: Фора-Банк выступил партнером ежегодного конкурса «Экспортер года» среди предприятий Ярославской области.')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-04-16:Ток шоу о финансах по реальным кейсам с экспертами Фора-Банка в Перми</h3>
+      <p>Специалисты Фора-Банка приняли участие в «Финансовом ток-шоу» ...</p>
+      <button class="show-btn" onclick="alert('Специалисты Фора-Банка приняли участие в «Финансовом ток-шоу», организованном региональным центром финансовой грамотности.      ')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-03-25: Изменения тарифов по валютным операциям для ЮЛ и ИП
+    </h3>
+      <p>С 08 апреля 2024 г. вступают в силу изменения тарифов по валютным операциям юридических...</p>
+      <button class="show-btn" onclick="alert('Полная новость: С 08 апреля 2024 г. вступают в силу изменения тарифов по валютным операциям юридических лиц и индивидуальных предпринимателей обсуживающихся в дополнительных офисах АКБ «ФОРА-БАНК» (АО) .')">Показать</button>
+    </div>
+
+    <div class="news-card">
+      <h3>2024-01-31: «Деловая Россия» и Глава города Перми: открытый диалог бизнеса и власти</h3>
+      <p>Глава города Перми обсудил с предпринимателями приоритетные...</p>
+      <button class="show-btn" onclick="alert('Полная новость: Глава города Перми обсудил с предпринимателями приоритетные проекты социально-экономического развития города')">Показать</button>
+    </div>
+  </div>
+  </main>
+
+</body>
+</html>

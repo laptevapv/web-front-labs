@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+<title>Фора-Банк</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        display: flex;
+      }
+      .menu {
+        position: fixed;
+        top: 70px;
+        right: 0;
+        height: 100%;
+        background-color: #000000;
+        padding: 20px;
+        width: 150px;
+    
+      }
+      .menu a {
+        display: block;
+        margin-bottom: 20px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .menu a:hover {
+        text-decoration: underline;
+        text-decoration-color: rgb(243, 6, 113, 0.764);
+      }
+    
+      .logo__image {
+        width: 100px;
+        height: auto;
+        padding: 20px;
+        position: fixed;
+        font-size: 16px;
+      }
+     
+      
+    
+      #b1 {
+        margin-top: 20px;
+        margin-left: 20%;
+        position: absolute;
+        font-size: 14.4px;
+      }
+    
+    
+      #b2 {
+        margin-left: 20%;
+        position: absolute;
+        margin-top: 25px;
+        font-size: 14.4px;
+      }
+    
+      
+      #b3 {
+        margin-left: 40%;
+        position: absolute;
+        margin-top: 3px;
+        font-size: 14.4px;
+      }
+      
+    
+      #b4 {
+        margin-left: 40%;
+        position: absolute;
+        margin-top: 25px;
+        font-size: 14.4px;
+      }
+    
+      #b5 {
+        margin-left: 65%;
+        position: absolute;
+        margin-top: 15px;
+        font-size: 14.4px;
+      }
+      #b6 {
+        margin-left: 80%;
+        border-radius: 2px;
+        width: 120px;
+        height: 50px;
+        position: absolute;
+        background-color: #ff0000;
+        color: white;
+        cursor: pointer;
+      }
+    
+      .header__places #b1, .header__places #b2 {
+      text-decoration: underline;
+      text-decoration-color: #4f4949; /* черный цвет подчеркивания по умолчанию */
+    }
+    
+    .header__places #b1:hover, .header__places #b2:hover {
+      text-decoration-color: rgba(243, 6, 113, 0.764) /* ярко-голубой цвет подчеркивания при наведении */
+    }
+    .header__places #b6:hover {
+      background-color: rgba(243, 6, 113, 0.764);
+    }
+    .header__places {
+      width: 100%;
+      background-color: #ff0000;
+      height: 75px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    .video-container {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-frame {
+    width: 60%;
+    height: 500px;
+    padding: 10px;
+    border: 5px solid #ff0707;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+
+  .video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+  }
+    
+    </style>
+    </head>
+  
+    
+<body>
+  
+
+  <div class="header__places">
+    <img class="logo__image" src="../logo.png">
+    <div id="b1">Москва</div><br>
+    <div id="b2">Подразделения и банкоматы</div>
+    <div id="b3">Информационная служба</div>
+    <div id="b4">8 (800) 100-9889 (бесплатно по России)</div>
+    <div id="b5">Интернет-банк:</div>
+    <button id="b6">Войти</button>
+  </div>
+
+  
+  <div class="video-container">
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/Sle6QsOMuWE" allowfullscreen></iframe>
+    </div>
+  </div>
+  <nav class="menu">
+    <ul>
+      <li><a href="about_company.html">О компании</a></li>
+      <li><a href="novosti.html">Новости</a></li>
+      <li><a href="curs.html">Курс валют</a></li>
+      <li><a href="contact.html">Контакты</a></li>
+      <li><a href="video.html">Видео</a></li>
+      <li><a href="rgz.html">Главная</a></li>
+    </ul>
+  </nav>
+  </main>
+
+</body>
+</html>
