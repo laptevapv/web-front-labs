@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаптева Полина Владимировна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/apple-touch-icon.png" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <script src="lab8.js"></script>
+    
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .form-container {
+        background-color: #e0f7fa;
+        padding: 20px;
+        border-radius: 5px;
+        width: 300px;
+        margin: auto;
+    }
+    .form-container label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .form-container input[type=date] {
+        display: block;
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-container button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px 0;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .form-container button:hover {
+        background-color: #0056b3;
+    }
+    #output {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #d32f2f;
+    }
+</style>
+<script src="get-days-count.js"></script>
+</head>
+<body>
+<header>
+    НГТУ, ФБ, Лабораторная 7
+</header>
+<main>
+    <div class="form-container">
+        <label for="birthday">Дата рождения:</label>
+        <input type="date" id="birthday">
+        <button onclick="showDaysCount()">Показать число дней</button>
+        <button onclick="clearFields()">Очистить</button>
+        <div id="output"></div>
+    </div>
+    <footer> &copy;Лаптева Полина, ФБИ-24, 2 курс, 2024
+
+</footer>
+
+</body>
+
+</html>

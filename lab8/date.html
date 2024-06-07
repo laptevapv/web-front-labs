@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаптева Полина Владимировна. Лабораторная 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../lab4/apple-touch-icon.png" type="image/x-icon">
+    <link rel="icon" href="../lab4/favicon-32x32.png">
+    <link rel="icon" href="../lab4/favicon-16x16.png">
+    <script src="lab8.js"></script>
+    <style>
+        .date-time {
+            color: green;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .date-info {
+            background-color: #d0e9f2;
+            color: red;
+            font-weight: bold;
+            padding: 10px;
+            width: fit-content;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 8
+    </header>
+    <main>
+        <div id="current-date-ru" class="date-time"></div>
+        <div id="current-date-en" class="date-time"></div>
+        <div id="current-date-fr" class="date-time"></div>
+        <div id="current-date-de" class="date-time"></div>
+        <div id="current-date-ja" class="date-time"></div>
+        <div id="current-date" class="date-info"></div>
+        
+        <div class="input-section">
+            <label for="day">День: </label>
+            <input type="number" id="day" min="1" max="31"><br>
+            <label for="month">Месяц: </label>
+            <input type="number" id="month" min="1" max="12"><br>
+            <label for="year">Год: </label>
+            <input type="number" id="year" min="1000" max="9999"><br>
+            <button onclick="showDayOfWeek()">Узнать день недели</button>
+        </div>
+        <div id="day-of-week" class="date-info"></div>
+    </main>
+    <footer>
+        &copy; Лаптева Полина, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
